@@ -132,6 +132,12 @@
 						<version>1.1.2</version>
 					</dependency>
 			
+		        <!-- jsp继承需要的包 -->
+		   <dependency>
+          <groupId>com.googlecode.rapid-framework</groupId>
+          <artifactId>rapid-core</artifactId>
+          <version>4.0.5</version>
+       </dependency>
 				
   		<dependency>
 				            <groupId>javax.servlet</groupId>
