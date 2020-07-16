@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib uri="http://www.rapid-framework.org.cn/rapid" prefix="rapid" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <rapid:override name="frame-content">
       <div style="padding: 15px;">
             <!-- 下面这个div是重写的内容 -->
@@ -12,26 +14,14 @@
                     <div id="activity-widget">
                         <div id="published-posts" class="activity-block"><h3>最近发布</h3> <br>
                             <ul>
-                                <li><span>21:06 11月25日</span>
-                                        <a href="/article/33"
-                                           target="_blank">MySQL常用命令语句</a>
-                                    </li>
-                                <li><span>21:05 11月25日</span>
-                                        <a href="/article/32"
-                                           target="_blank">Docker_入门？只要这篇就够了！（纯干货适合0基础小白）</a>
-                                    </li>
-                                <li><span>21:02 11月25日</span>
-                                        <a href="/article/31"
-                                           target="_blank">RocketMQ 实战之快速入门</a>
-                                    </li>
-                                <li><span>21:01 11月25日</span>
-                                        <a href="/article/30"
-                                           target="_blank">SpringBoot + mongodb 整合, 记录网站操作日志，常用查询操作</a>
-                                    </li>
-                                <li><span>21:00 11月25日</span>
-                                        <a href="/article/29"
-                                           target="_blank">IDEA启动EDAS项目</a>
-                                    </li>
+                              <c:forEach var="article" items="${request_Article }">
+                              
+                               <li>   <span><fmt:formatDate value="${article.articleUpdateTime }" pattern="yyyy-MM-dd" /></span>
+                               <a href="/article/${article.articleId }">
+                               ${article.articleTitle }
+                               </a>
+                               </li>
+                              </c:forEach>
                                 </ul>
                         </div>
                         <br>

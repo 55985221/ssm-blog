@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+					<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+					<mapper namespace="blog.mapper.ArticleMapper">
+					
+						<select id="listRecentArticle" parameterType="Integer" resultType="blog.entity.Article">
+							 select article_id,article_update_time,article_title  from article where  article_status=1  order by article_id  DESC limit #{n}
+					
+						</select> 
+					</mapper>
