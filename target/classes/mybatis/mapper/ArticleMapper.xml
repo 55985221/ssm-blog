@@ -6,4 +6,11 @@
 							 select article_id,article_update_time,article_title  from article where  article_status=1  order by article_id  DESC limit #{n}
 					
 						</select> 
+						<select id="getArticleByid" parameterType="Integer" resultType="blog.entity.Article">
+						select *  from article where article_id=#{id}
+					
+						</select>
+						<select id="gindall" resultType="blog.entity.Article">
+							select * from article
+						</select> 
 					</mapper>

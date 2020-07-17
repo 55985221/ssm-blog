@@ -8,6 +8,20 @@
   <name>ssm-blog Maven Webapp</name>
   <url>http://maven.apache.org</url>
   
+ 
+<repositories>  
+        <repository>  
+            <id>alimaven</id>  
+            <name>aliyun maven</name>  
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>  
+            <releases>  
+                <enabled>true</enabled>  
+            </releases>  
+            <snapshots>  
+                <enabled>false</enabled>  
+            </snapshots>  
+        </repository>  
+</repositories> 
   <properties>
   <spring.version>4.2.0.RELEASE</spring.version>
   <mybatis.version>3.4.0</mybatis.version>
@@ -138,6 +152,12 @@
           <artifactId>rapid-core</artifactId>
           <version>4.0.5</version>
        </dependency>
+       <!--  -->
+      <dependency>
+    <groupId>com.github.pagehelper</groupId>
+    <artifactId>pagehelper</artifactId>
+    <version>4.1.6</version>
+</dependency>
 				
   		<dependency>
 				            <groupId>javax.servlet</groupId>
