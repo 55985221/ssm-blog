@@ -4,6 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <rapid:override name="frame-content">
+<div class="layui-body">
       <div style="padding: 15px;">
             <!-- 下面这个div是重写的内容 -->
             <div class="layui-container">
@@ -108,6 +109,6 @@
     </div>
 			</div>
         </div>
-
+</div>
 </rapid:override>
 <%@ include file="framework.jsp" %>

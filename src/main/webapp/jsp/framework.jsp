@@ -64,8 +64,8 @@
                     <dl class="layui-nav-child">
                         <dd><a href="article/article_list">全部文章</a></dd>
                         <dd><a href="/admin/article/insert">写文章</a></dd>
-                        <dd><a href="/admin/category">全部分类</a></dd>
-                        <dd><a href="/admin/tag">全部标签</a></dd>
+                        <dd><a href="category/all">全部分类</a></dd>
+                        <dd><a href="tag/tagall">全部标签</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
@@ -116,9 +116,9 @@
         </div>
     </div>
 
-    <div class="layui-body">
+   
 				<rapid:block name="frame-content"></rapid:block>
-    </div>
+
 
     <div class="layui-footer">
         <!-- 底部固定区域 -->
