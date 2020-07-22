@@ -17,17 +17,21 @@ public class CategoryServiceImpl implements CategoryService {
 	CategoryMapper categorymapper;
 @Resource
 CategoryrefMapper categoryrefmapper;
-public Category[] GetCategoryByPid() {
-	      Category[] category= categorymapper.GetCategoryByPid(0);
+public Category[] getCategoryByPid() {
+	      Category[] category= categorymapper.getCategoryByPid(0);
 	      for(int i=0;i<category.length;i++) {
-	    	  Category[] catEgory=categorymapper.GetCategoryByPid( category[i].getCategoryid());
+	    	  Category[] catEgory=categorymapper.getCategoryByPid( category[i].getCategoryid());
 	    	  for(int z=0;z<catEgory.length;z++) {
-	    		  catEgory[z].setArticlenumber(categoryrefmapper.GetcategoryrefCount(catEgory[z].getCategoryid()));
+	    		  catEgory[z].setArticlenumber(categoryrefmapper.getcategoryrefCount(catEgory[z].getCategoryid()));
 	    	  }
 	    	  category[i].setCategory(catEgory);
-	    	  category[i].setArticlenumber(categoryrefmapper.GetcategoryrefCount(category[i].getCategoryid()));
+	    	  category[i].setArticlenumber(categoryrefmapper.getcategoryrefCount(category[i].getCategoryid()));
 	    	  
 	      }
 	return category;
 }
+	public Category[] getCategory() {
+		
+		return categorymapper.getCategory();
+	}
 }

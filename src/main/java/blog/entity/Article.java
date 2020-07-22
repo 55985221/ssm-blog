@@ -1,6 +1,7 @@
 package blog.entity;
 
 import java.util.Date;
+import java.util.List;
 
 public class Article {
 	private Integer articleId;
@@ -43,6 +44,25 @@ public class Article {
 
     //”√ªß
     private User user;
+    private List<Tag> tagList;
+    public List<Tag> getTagList() {
+		return tagList;
+	}
+
+	public void setTagList(List<Tag> tagList) {
+		this.tagList = tagList;
+	}
+
+	public List<Category> getCategoryList() {
+		return categoryList;
+	}
+
+	public void setCategoryList(List<Category> categoryList) {
+		this.categoryList = categoryList;
+	}
+
+	private List<Category> categoryList;
+
 
 	public Integer getArticleId() {
 		return articleId;

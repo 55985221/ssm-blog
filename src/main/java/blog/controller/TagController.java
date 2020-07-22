@@ -17,7 +17,7 @@ public class TagController {
 TagService tagservice;
 @RequestMapping("/tagall")
 public String TagAll(Map map) {
-Tag[] tag=tagservice.GatTag();
+Tag[] tag=tagservice.gatTag();
 map.put("tags", tag);
 return "/tag/tagall";	
 }

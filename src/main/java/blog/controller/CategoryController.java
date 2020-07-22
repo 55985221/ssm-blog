@@ -17,7 +17,7 @@ public class CategoryController {
 	CategoryService  categoryservice; 
 	@RequestMapping("/all")
 	public String getcategoryall(Map map) {
-		Category[] category=categoryservice.GetCategoryByPid();
+		Category[] category=categoryservice.getCategoryByPid();
 	map.put("category", category);
 		return "/category/categoryall";
 	}

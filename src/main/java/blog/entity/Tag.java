@@ -5,6 +5,11 @@ public class Tag {
 	String tagname;
 	String tagdescription;
 	Integer articlenumber;
+	public Tag() {
+	}
+	public Tag(Integer tagid) {
+		this.tagid=tagid;
+	}
 	public Integer getTagid() {
 		return tagid;
 	}

@@ -3,5 +3,6 @@ package blog.service;
 import blog.entity.Category;
 
 public interface CategoryService {
-	Category[]  GetCategoryByPid();
+	Category[]  getCategoryByPid();
+	Category[] getCategory();
 }

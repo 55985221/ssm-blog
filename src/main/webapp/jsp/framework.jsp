@@ -10,13 +10,13 @@
 <base href="<%=basePath%>">
     <meta charset="utf-8">
     <link rel="shortcut icon" href="resources/img/logo.png">
-    <title>博客后台模板 </title>       
+    <title>Alan的微博后台</title>       
            
     <link rel="stylesheet" href="resources/plugin/layui/css/layui.css">
     <link rel="stylesheet" href="resources/css/back.css">
     <link rel="stylesheet" href="resources/plugin/font-awesome/css/font-awesome.min.css">
 <rapid:block name="frame-style"></rapid:block>
-<rapid:block name="frame-script"></rapid:block>
+
 
 </head>
 <body>
@@ -63,7 +63,7 @@
                     <a class="" href="javascript:;">文章</a>
                     <dl class="layui-nav-child">
                         <dd><a href="article/article_list">全部文章</a></dd>
-                        <dd><a href="/admin/article/insert">写文章</a></dd>
+                        <dd><a href="article/articleadd">写文章</a></dd>
                         <dd><a href="category/all">全部分类</a></dd>
                         <dd><a href="tag/tagall">全部标签</a></dd>
                     </dl>
@@ -129,6 +129,7 @@
 <script src="resources/js/jquery.min.js"></script>
 <script src="resources/plugin/layui/layui.all.js"></script>
 <script src="resources/js/back.js"></script>
+<rapid:block name="frame-script"></rapid:block>
 
 </body>
 </html>

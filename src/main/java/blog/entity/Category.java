@@ -11,6 +11,11 @@ public class Category {
 	String category_icon;
 	Category[]  category;
 	Integer articlenumber;//非数据库数据标签文章数
+	public Category() {
+	}
+	public Category(Integer categoryid) {
+		this.categoryid=categoryid;
+	}
 	public Integer getArticlenumber() {
 		return articlenumber;
 	}

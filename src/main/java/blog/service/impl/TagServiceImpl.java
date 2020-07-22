@@ -14,10 +14,10 @@ public class TagServiceImpl implements TagService{
 TagMapper tagmapper;
 @Resource
 TagrefMapper tagrefmapper;
-public Tag[] GatTag() {
-	Tag[] tag=tagmapper.GetTag();
+public Tag[] gatTag() {
+	Tag[] tag=tagmapper.getTag();
 	for(int i=0;i<tag.length;i++) {
-		tag[i].setArticlenumber(tagrefmapper.GetTagrefCount(tag[i].getTagid()));
+		tag[i].setArticlenumber(tagrefmapper.getTagrefCount(tag[i].getTagid()));
 	}
 	return tag;
 }

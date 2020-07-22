@@ -31,6 +31,7 @@ CommentService commentservice;
 	       String name=request.getParameter("username");
 	       String pws=request.getParameter("password");
 	       User user=userservice.getUserByNameOrEmail(name);
+	      
 	       if(user!=null) {
 	    	   if(user.getUserPass().equals(pws)) {
 	    		   request.getSession().setAttribute("session_user", user);//把user放到域中
