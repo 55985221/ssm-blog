@@ -96,7 +96,9 @@
 			
 			
 			         
-			
+			            layui.use('code', function() { //加载code模块
+							layui.code();
+						});
 			       
 			
 			            //自定义验证规则
@@ -112,27 +114,9 @@
 			                }
 			            });
 			
-			            layedit.build('content', {
-			                tool: [
-			                    'strong' //加粗
-			                    ,'italic' //斜体
-			                    ,'underline' //下划线
-			                    ,'del' //删除线
-			                    ,'|' //分割线
-			                    ,'left' //左对齐
-			                    ,'center' //居中对齐
-			                    ,'right' //右对齐
-			                    ,'link' //超链接
-			                    ,'unlink' //清除链接
-			                    ,'face' //表情
-			                    ,'image' //插入图片
-			                    ,'code'
-			                ]
-			            });
+			  
 			
-			            layui.use('code', function(){ //加载code模块
-			                layui.code();
-			            });
+			           
 			
 			            //二级联动,将来要重写
 			            form.on("select(articleParentCategoryId)",function () {
@@ -154,6 +138,25 @@
 			       });
 			
 			    </script>
-			
+	 <link rel="stylesheet" href="resources/kindeditor/themes/default/default.css" />
+			<link rel="stylesheet" href="resources/kindeditor/plugins/code/prettify.css" />
+			<script charset="utf-8" src="resources/kindeditor/kindeditor-all-min.js"></script>  
+			<script charset="utf-8" src="resources/kindeditor/lang/zh-CN.js"></script>
+			<script charset="utf-8" src="resources/kindeditor/plugins/code/prettify.js"></script>
+			<script>
+						KindEditor.ready(function(K) {
+							var editor1 = K.create('textarea[id="content"]', {   //指向了页面中 id=content 的那个元素 
+						      //cssPath : '../plugins/code/prettify.css',
+								uploadJson : '../jsp/upload_json.jsp',
+								fileManagerJson : '../jsp/file_manager_json.jsp',
+								allowFileManager : true,
+								width:"1100xp",
+								height:"420xp"
+							});
+							
+							prettyPrint();
+						});
+				</script>
+			 
 			</rapid:override>
 <%@ include file="../framework.jsp" %>
