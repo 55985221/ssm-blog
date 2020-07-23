@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
+ <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib uri="http://www.rapid-framework.org.cn/rapid" prefix="rapid" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -89,26 +89,15 @@
 			
 			<rapid:override name="frame-script">
 			    <script>
-			        layui.use(['form', 'layedit', 'laydate'], function() {
+			        layui.use(['form', 'laydate'], function() {
 			            var form = layui.form
 			                , layer = layui.layer
-			                , layedit = layui.layedit
 			                , laydate = layui.laydate;
 			
 			
-			            //上传图片,必须放在 创建一个编辑器前面
-			            layedit.set({
-			                uploadImage: {
-			                     url: 'upload/img' //接口url
-			                    ,type: 'post' //默认post
-			                }
-			            });
+			         
 			
-			            //创建一个编辑器
-			            var editIndex = layedit.build('content',{
-			                    height:350,
-			                }
-			            );
+			       
 			
 			            //自定义验证规则
 			            form.verify({
@@ -119,7 +108,7 @@
 			                }
 			                , pass: [/(.+){6,12}$/, '密码必须6到12位']
 			                , content: function (value) {
-			                    layedit.sync(editIndex);
+			              
 			                }
 			            });
 			

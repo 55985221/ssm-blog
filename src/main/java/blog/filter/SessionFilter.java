@@ -20,17 +20,18 @@ public void destroy() {
 		HttpServletRequest request1=(HttpServletRequest) request;
 		User user=(User) request1.getSession().getAttribute("session_user");
 		String url=request1.getRequestURI();
-		if(url.endsWith("login")||url.endsWith("login.jsp")||url.endsWith(".css")||url.endsWith(".js")||url.endsWith(".png")) {
-			System.out.println(url);
-			chain.doFilter(request, response);
-		}
-		if(user!=null) {
-			chain.doFilter(request, response);
+		if(url.endsWith("login")||url.endsWith("login.jsp")) {
+			chain.doFilter(request1, response);
+		}else {
+			if(request1.getSession().getAttribute("session_user")!=null) {
+				chain.doFilter(request1, response);
 			}else {
-				System.out.println("ณ๖ดํมห ");
 				request1.getRequestDispatcher("/jsp/login.jsp").forward(request1, response);
-				}
+				
 			}
+		}
+		
+		}
 	public void init(FilterConfig filterConfig) throws ServletException {
 	}
 }
